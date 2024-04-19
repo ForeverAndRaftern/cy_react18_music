@@ -1,12 +1,15 @@
-import { useRoutes } from "react-router-dom";
-import routes from "./routes";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
+import React, { Suspense } from "react";
+// import { useRoutes } from "react-router-dom";
+import Routes from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <div className="main">{useRoutes(routes)}</div>
+      <Suspense fallback="">
+        <div className="main">
+          <Routes></Routes>
+        </div>
+      </Suspense>
     </div>
   );
 }
